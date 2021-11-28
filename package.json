@@ -1,0 +1,92 @@
+{
+    "package_version": 2,
+    "version": "1.0.0",
+    "name": "mytools",
+    "description": "i18n:mytools.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@types/node": "^16.0.1",
+        "typescript": "^4.3.4"
+    },
+    "author": "tiger",
+    "editor": ">=3.3.0",
+    "scripts": {
+        "build": "tsc -b",
+        "watch": "tsc -w"
+    },
+    "panels": {
+        "default": {
+            "title": "simple panel",
+            "main": "./dist/panels/default.js"
+        }
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "Develop",
+                "label": "test",
+                "message": "log"
+            },
+            {
+                "path": "Develop",
+                "label": "test2",
+                "message": "log2"
+            },
+            {
+                "path": "i18n:menu.panel/Custom",
+                "label": "Open Hello World",
+                "message": "open-panel"
+            }
+        ],
+        "messages": {
+            "log": {
+                "methods": [
+                    "log"
+                ]
+            },
+            "log2": {
+                "methods": [
+                    "log2"
+                ]
+            },
+            "open-panel": {
+                "methods": [
+                    "openPanel"
+                ]
+            },
+            "increasing": {
+                "methods": [
+                    "increasing"
+                ]
+            },
+            "query-num": {
+                "methods": [
+                    "queryNum"
+                ]
+            },
+            "mytools:increasing": {
+                "methods": [
+                    "default.increasing"
+                ]
+            },
+            "scene:ready": {
+                "methods": ["initData"]
+            },
+            "asset-db:asset-change":{
+                "methods":["assetsRefresh"]
+            }
+        },
+        "shortcuts": [
+            {
+                "message": "open-panel",
+                "win": "ctrl+w",
+                "mac": "cmd+w"
+            }
+        ],
+        "asset-db": {
+            "mount": {
+                "path": "./assets"
+            }
+        }
+    }
+}
